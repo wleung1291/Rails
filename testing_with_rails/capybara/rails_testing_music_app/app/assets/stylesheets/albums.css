@@ -1,0 +1,43 @@
+
+/* Album Show page */
+.album-track-list {
+  margin: 0% 35% 0% 35%;
+}
+/* album's track list ul */
+.album-track-list > ul {
+  padding-left: 0px;
+  list-style-type: none;
+  /* display:flex;  */
+  /* flex-direction: row; */
+}
+/*  Display the track list in 100% width of the container automatically */
+.album-track-list > ul > li{ 
+  /* flex: 1 1 auto;  */
+  width: 100%; 
+  display:flex; 
+  flex-wrap:wrap; 
+  justify-content: flex-start;
+}
+/*  Remove underline from tracks list */
+.album-track-list > ul > li > a {
+  text-decoration: none;
+}
+
+
+/* Album new/edit form page */
+.album-form{
+  margin: 0% 30% 0% 30%
+}
+.album-form-items {
+  list-style-type: none;
+  flex-wrap: wrap; 
+}
+.album-form-items > p{ 
+  width: 100%; 
+  display:flex; 
+  justify-content: space-between
+}
+.album-form > #album-form-submit-btn{
+  display: flex;
+  justify-content: flex-end
+}

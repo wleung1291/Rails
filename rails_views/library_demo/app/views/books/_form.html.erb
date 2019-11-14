@@ -1,0 +1,71 @@
+<!--
+  Things to change:
+    - action (done!)
+    - hidden input patch (done!)
+    - pre-filled values (done!)
+    - submit button (done!)
+-->
+
+<% if action == :edit %>
+  <%# __ PATCH '/books/:id' books#update %>
+  <%# book refers to @book from edit.html.erb %>
+  <%# book_url == /books %>
+  <% action_url = book_url(book)%> 
+<% else %>
+  <%# __ POST '/books' %>
+  <% action_url = books_url %>
+<% end %>
+
+<form action="<%= action_url %>" method="post">
+  <% if action == :edit %>
+    <!-- name="_method" tells rails this is the actual method we want to use -->
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <!-- for attribute tells us which input(id attribute) to tie the label to-->
+  <label for="title">Title</label>
+  <input id="title" type="text" name="book[title]" value="<%= book.title %>">
+  <!-- value="<%= book.title %> gets the value from @book to prefill for edits-->
+  <!-- name="book[title]" tells rails to nest title under the key of book; 
+    Ex. Parameters: {"book"=>{"title"=>"Harry Potter", "author"=>"JK Rowling"}
+  -->
+  <br>
+
+  <label for="author">Author</label>
+  <input id="author" type="text" name="book[author]" value="<%= book.author %>">
+
+  <br>
+
+  <label for="year">Year</label>
+  <input id="year" type="text" name="book[year]" value="<%= book.year %>">
+
+  <br>
+
+  <label for="category">Category</label>
+  <select id="category" name="book[category]">
+    <option disabled <%= book.category ? "" : "selected"%>>
+      -- Please Select --
+    </option>
+    <option value="Fiction" <%= book.category == "Fiction" ? "selected" : ""%>>
+      Fiction
+    </option>
+    <option value="Non-Fiction" <%= book.category == "Non-Fiction" ? "selected" : ""%>>
+      Non-Fiction
+    </option>
+    <option value="Memoir" <%= book.category == "Memoir" ? "selected" : ""%>>
+      Memoir
+    </option>
+  </select>
+
+  <br><br>
+
+  <label for="description">Description</label>
+  <textarea name="book[description]">
+    <%= book.description %>
+  </textarea>
+
+  <input type="submit" value="<%= action == :edit ? 'update book' : 'add book'%>">
+</form>
+
+
+

@@ -1,0 +1,24 @@
+/* Track new/edit form page */
+.track-form{
+  margin: 0% 30% 0% 30%
+}
+.track-form-items {
+  list-style-type: none;
+  flex-wrap: wrap; 
+}
+.track-form-items > p{ 
+  width: 100%; 
+  display:flex; 
+  justify-content: space-between
+}
+.track-form > #track-form-submit-btn{
+  display: flex;
+  justify-content: flex-end
+}
+
+/* Track Show Page */
+#show-lyrics {
+  margin: 0% 20% 0% 20%;
+  display: flex;
+  justify-content: center;
+}

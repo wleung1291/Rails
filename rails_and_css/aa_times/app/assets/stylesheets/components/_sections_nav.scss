@@ -1,0 +1,21 @@
+.section-links ul{
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #d3d3d3;
+  padding: 10px 0px 10px 0px
+}
+
+.section-links li{
+  margin-right: 10px
+}
+.section-links li:last-of-type{
+  padding-right: 0px;
+}
+
+.section-links li:hover{
+  background-color: lightgray
+
+}
+.section-links li:hover:last-of-type{
+  text-decoration: underline;
+}

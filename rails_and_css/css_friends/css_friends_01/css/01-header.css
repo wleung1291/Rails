@@ -1,0 +1,49 @@
+/* PHASE 1: Header */
+
+body{
+  font-weight: 400;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.header{
+  background: red;
+  color: white;
+  border-bottom: 2px solid lightgray;
+}
+
+.header a {
+  display: block;  
+  padding: 10px 20px 10px 20px;
+}
+
+/* To center a smaller block element inside a larger block element, set its 
+left and right margins to auto. Since block elements cannot sit next 
+to each other normally, need to use flex */
+.header-nav{
+  background: red;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 900px;
+  border-right: 1px solid #ccc; 
+  border-left: 1px solid #ccc;
+}
+
+.header-logo{
+  border-right: 1px solid #ccc;
+  font-weight: 700;
+}
+.header-logo:hover {
+  background: black;
+}
+
+.header-list{  
+  display: flex;
+}
+.header-list > li {
+  border-left: 1px solid #ccc;
+}
+.header-list > li:hover{
+  background: black
+}

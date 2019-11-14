@@ -1,0 +1,51 @@
+
+/* Bands/albums ul */
+.bands > ul, .albums-list > ul{
+  padding-left: 0px;
+  list-style-type: none;
+  display:flex; 
+  flex-wrap:wrap; 
+  flex-direction: row;
+  
+}
+/*  Display the bands/albums in 3 columns automatically */
+.bands > ul > li, .albums-list > ul > li { 
+  /* max-width: 30%; */
+  flex: 1 1 auto; 
+  width: 30%; 
+  display:flex; 
+  justify-content: center
+}
+/* Remove underline from links */
+.bands > ul > li > a, .albums-list > ul > li > a{
+  text-decoration: none;
+}
+/* Format bands in the bands index page and albums in the band show page*/
+.bands > ul > li > a, .albums-list > ul > li > a{
+  margin: 10px;
+  padding: 40px 80px; 
+  background-color: rgb(100, 101, 110); 
+  color: white; 
+  /* border: 1px solid white ; */
+  border-radius: 17px;
+}
+
+.bands > ul > li > a:hover, .albums-list > ul > li > a:hover {
+  opacity: 0.7;
+}
+
+/* New Band Page */
+.band-name {
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.band-name > input[type=submit]{
+  margin-left: 15px;
+}
+
+/* Band Show Page */
+.albums {
+  display: flex;
+  justify-content: center;
+}

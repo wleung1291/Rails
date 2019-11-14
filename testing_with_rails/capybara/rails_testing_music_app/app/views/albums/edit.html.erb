@@ -1,0 +1,43 @@
+<h1 class="page-header">
+  <a href="<%= album_url(@album) %>"><%= @album.title %></a>&nbsp> Edit</h1>
+<%= render "shared/errors" %>
+<br>
+<%= render "form", album: @album, action: :edit %>
+
+<% 
+=begin %>
+<form action="<%= album_url(@album) %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= auth_token %>
+
+  <label for="album-title">Title</label>
+  <input id="album-title" type="text" name="album[title]" value="<%= @album.title %>">
+  <br>
+
+  <label for="album-band">Band</label>
+  <select id="album-band" name="album[band_id]">
+    <% Band.all.each do |band| %>
+      <option <%= "selected" if @album.band_id == band.id %> value="<%= band.id %>">
+        <%= band.name %>
+      </option>
+    <% end %>
+  </select>
+  <br>
+
+  <label for="album_live_t">Live</label>
+  <input  id="album_live_t" type="radio" name="album[live]" value="t"
+    <%= "checked" if @album.live %>>
+    
+  <label for="album_live_f">Studio</label>
+  <input id="album_live_f" type="radio" name="album[live]" value="f"
+    <%= "checked" if !@album.live %>>
+  <br>
+
+  <label for="album-year">Year</label>
+  <input id="album-year" type="number" name="album[year]" value="<%= @album.year %>">
+  <br>
+
+  <input type="submit" value="Update">
+</form>
+<% 
+=end %>

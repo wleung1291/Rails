@@ -1,0 +1,10 @@
+<h1>Cat's index page</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <%# list the cats and link to the show pages. %>
+    <li><a href="<%= cat_url(cat) %>" > <%= cat.name %>
+  <% end %>
+</ul>
+
+<%= link_to "Add Cat", new_cat_url %>

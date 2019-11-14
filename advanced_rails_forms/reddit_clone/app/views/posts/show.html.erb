@@ -1,0 +1,6 @@
+<h1><%= @post.title %> by <%= current_user.username %> <h1>
+<h4>Content</h4><p><%= @post.content %><p>
+
+<% if current_user == @post.user_id %>
+  <a href="<%= edit_post_url(@post) %>">Edit Post</a>
+<% end %>

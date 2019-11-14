@@ -1,0 +1,47 @@
+<h1 class="page-header">
+  <a href="<%= album_url(@album) %>"><%= @album.title %></a>&nbsp> New Track
+</h1>
+<%= render "shared/errors" %>
+
+<%= render "form", track: @track, action: :new %>
+
+<% 
+=begin %>
+<form action="<%= tracks_url %>" method="post">
+  <%= auth_token %>
+
+  <label for="track-title">Title</label>
+  <input id="track-title" type="text" name="track[title]">
+  <br>
+
+  <label for="track-album">Album</label>
+  <select id="track-album" name="track[album_id]">
+    <% Album.all.each do |album| %>
+      <option <%= "selected" if @track.album_id == album.id %> value="<%= album.id %>">
+        <%= album.title %>
+      </option>
+    <% end %>
+  </select>
+
+  <label for="track-ord">Order
+    <input type="number" name="track[ord]" value="<%= @track.ord %>">
+  </label>
+
+  <label for="track-bonus-f">Standard</label>
+  <input id="track-bonus-f" type="radio" name="track[bonus]" value="f" 
+    <%= "checked" if !@track.bonus %>>
+
+  <label for="track-bonus-t">Bonus</label>
+  <input id="track-bonus-t" type="radio" name="track[bonus]" value="t" 
+    <%= "checked" if @track.bonus %>>
+
+  <label for="track-lyrics">Lyrics</label>
+  <textarea id="track-lyrics" name="track[lyrics]">
+    <%= @track.lyrics %>
+  </textarea>
+
+  <input type="submit" value="Submit">
+</form>
+
+<% 
+=end %>

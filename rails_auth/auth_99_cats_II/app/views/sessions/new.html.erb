@@ -1,0 +1,17 @@
+<h1>Create Session</h1>
+
+<%# renders flash or flash.now errors %>
+<%= render 'shared/errors' %>
+
+<form  action = "/session" method = "POST">
+  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  
+  <label for="username">Username</label>
+  <input id="username" type="text" name="user[username]">
+
+  <label for="password">Password</label>
+  <input id="password" type="password" name="user[password]">
+  
+  <input type="submit" value="Log in">
+
+</form>

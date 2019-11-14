@@ -1,0 +1,24 @@
+/* New comment submit form */
+.new-note-form {
+  list-style-type: none;
+  flex-wrap: wrap; 
+}
+.new-note-form > p{ 
+  width: 100%; 
+  display:flex; 
+  justify-content: center
+}
+.new-note-form > #note-form-submit-btn{
+  display: flex;
+  justify-content: center
+}
+
+/* Display Comments */
+.note-item {
+  margin: 0% 30% 0% 30%;
+  color: grey
+}
+.note-item-info {
+  display: flex;
+  justify-content: space-between
+}

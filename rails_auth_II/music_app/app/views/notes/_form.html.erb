@@ -1,0 +1,12 @@
+<%# <h4 class='sub-header'>New Comment</h4> %>
+<br>
+<form class='new-note-form' action="<%= notes_url %>" method="POST">
+  <input type="hidden" name="note[track_id]" value="<%= track.id %>">
+  <%= auth_token %>
+
+  <p>
+    <textarea id="note-content" rows="10" cols="40" name="note[comment]" placeholder="New comment..."></textarea>
+  </p>
+
+  <p id="note-form-submit-btn"><input type="submit"></p>
+</form>

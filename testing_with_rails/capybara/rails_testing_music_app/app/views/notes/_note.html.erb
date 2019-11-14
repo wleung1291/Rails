@@ -1,0 +1,16 @@
+<div class='note-item'>
+  <p><%= note.comment %></p>
+  <div class='note-item-info'>
+    <p id="note-user">- <%= note.user.email %></p>
+
+    <% if note.user_id == current_user.id %>
+      <form action="<%= note_url(note) %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <%= auth_token %>
+
+        <input type="submit" value="Delete Comment">
+      </form>
+    <% end %>
+  </div>
+    <hr>
+</div>

@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ 
+body {
+  background-color: antiquewhite;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  /* prevent resizing of body when resizing the window */
+  margin-right: auto;
+  margin-left:  auto;
+  width: 960px;
+}
+
+/* login/signup redirect buttons */
+/* login and signup btns */
+.main > a{
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color:skyblue;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px 10px 10px 10px;
+}
+.main{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main > .home {
+  display: flex;
+}
+.main > .home > h4 > a{
+  text-decoration: none;
+  color: #000;
+}
+
+.main > .user {
+  display: flex;
+  justify-content: center
+}
+/* current user's display name */
+.main > .user > h4 > a {
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+
+/* page header for every page*/
+.page-header{
+  display: flex;
+  justify-content: center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+/* Links at the bottom of the page */
+.page-links, .sub-header{
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+.sub-header {
+  margin-top: 50px
+}
+
+.page-links{
+  padding-left: 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.page-links > li > a {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 10pt;
+  text-decoration: none;
+  background-color: antiquewhite;
+  color: blue;
+  border-radius: 10%;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+}

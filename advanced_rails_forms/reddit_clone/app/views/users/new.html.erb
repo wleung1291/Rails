@@ -1,0 +1,18 @@
+<h1 class='page-header'>New User</h1>
+<%= render 'shared/errors' %>
+
+<div class="signup-main">
+  <form action="<%= users_url %>" method="post">
+    <%= auth_token %>
+    <div class="username-input"> 
+      <label for="username">Username</label>
+      <input id="Username" type="text" name="user[username]" value="<%= @user.username %>">
+
+      <label for="pw">Password</label>
+      <input id="pw" type="password" name="user[password]" value="<%= @user.password %>">
+
+      <input type="submit" value="Sign Up">
+    </div>
+  </form>
+</div>
+

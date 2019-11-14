@@ -1,0 +1,16 @@
+<h1 class="page-header">Bands</h1>
+
+<div class="bands">
+  <ul>
+    <% @bands.sort.each do |band| %>
+      <li>
+        <a class="button" href="<%= band_url(band) %>"><%= band.name %></a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<h3 class="sub-header">Links</h3>
+<ul class='page-links'>
+  <li><a class="button" href="<%= new_band_url %>">New Band</a></li>
+</ul>

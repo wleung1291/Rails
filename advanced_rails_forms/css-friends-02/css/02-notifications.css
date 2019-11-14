@@ -1,0 +1,53 @@
+/* PHASE 2: Notifications */
+
+/* the number of notifications */
+.badge{
+  display: inline;
+  font-size: 14px;
+  padding: 1px 5px;
+  background: #000;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+/* make number background red when hovering */
+.header-list:hover .badge {
+  background: #f00;
+  color: black;
+}
+
+ /* will ensure that our header dropdown will stay on top  */
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+/* contains the notifications list within the notifications box  */
+.header-list > li {
+  position: relative;
+}
+
+.header-notifications {
+  display: none; /* hides the notifications list */
+  /* An element with position: absolute; is positioned relative to the nearest positioned ancestor; in this case lift it out of the document flow, and have 
+  it not stretch its parent.  */
+  position: absolute;
+  background: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  color: black;
+  font-size: 10pt;
+  white-space: nowrap; /* keep the notification text on one line */
+}
+
+.header-notifications > li{
+  border-bottom: 1px solid black;
+}
+
+/* shows the notifications list when hovering over notifications*/
+li:hover .header-notifications {
+  display: block; 
+}
+.header-notifications > li:hover {
+  background: #eee
+}

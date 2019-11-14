@@ -1,0 +1,57 @@
+<h1>New Cat</h1>
+
+<%= render 'form', cat: @cat, action: :new %>
+
+<%# used for commenting  %>
+<%
+=begin %>
+
+<%# <form action="/cats" method="post"> %>
+<%# rake routes, you can see the prefix for POST is cats, thus cats_url %>
+<form action="<%= cats_url %>" method="post">
+
+  <label for="name">Name</label>
+  <input id="name" type="text" name="cat[name]">
+  <br>
+
+  <label for="birth_date">Birth Date</label>
+  <input id="birth_date" type="date" name="cat[birth_date]">
+  <br>  
+
+  <label for="color">Color</label>
+  <select id="color" name="cat[color]">
+    <option disabled selected>-- Select a color --</option>
+      <% Cat::COLORS.each do |color| %>
+        <option value="<%= color %>" <%= @cat.color == color ? "selected" : "" %>>
+        <%# if @cat.color==color return the word selected else return null%>
+          <%= color.upcase %>
+        </option>
+      <% end %>
+  </select>
+  <br>
+
+  <label for="male">Male</label>
+  <input id="male" type="radio" name="cat[sex]" value = "M"
+    <%= @cat.sex == "M" ? "checked" : "" %>>
+    <%# if @cat.sex=="M" return the string checked, else return null%>
+    <%# Used to prefill values for editing %>
+
+  <label for="female">Female</label>
+  <input id="female" type="radio" name="cat[sex]" value = "F"
+    <%= @cat.sex == "F" ? "checked" : "" %>>
+  <br>
+
+  <label for="description">Description
+    <textarea name="cat[description]"><%= @cat.description %></textarea>
+  </label>
+  <br>
+
+  <%# Clicking on the submit button will package all the info above and 
+      send a post method to the action(cats_url) %>
+  <input type="submit" value="Add Cat">
+
+</form>
+
+<%# used for commenting  %>
+<% 
+=end %>

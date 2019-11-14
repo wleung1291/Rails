@@ -1,0 +1,30 @@
+/* PHASE 1: Header */
+
+body {
+  /* Write your css here... */
+  background: rgb(235, 234, 234);
+  font-family: sans-serif;
+  font-size: 12pt;
+}
+
+.header { 
+  background: red;
+  color: white;
+  border-bottom: 2px solid gray;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.header a {
+  display: block;
+  padding: 10px 10px 10px 20px;
+}
+
+.header-nav {
+  /* evenly space out the margins on the left and right side of an element */
+  margin: auto; 
+  width: 820px;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+
+}

@@ -1,0 +1,30 @@
+<h1 class='page-header'>Log In</h1>
+<%= render 'shared/errors' %>
+
+<div class="login-main">
+  <form action="<%= session_url %>" method="post">
+    <%= auth_token %>
+
+    <div class="email-input"> 
+      <label for="email">Email</label>
+      <input id="email" type="email" name="user[email]" >
+    </div>
+    <br><br>
+
+    <div class="pw-input"> 
+      <label for="pw">Password</label>
+      <input id="pw" type="password" name="user[password]" >
+    </div>
+    <br>
+
+    <div class="submit-btn">
+      <input type="submit" value="Log in">
+    </div>
+    
+  </form>
+</div>
+
+
+
+
+

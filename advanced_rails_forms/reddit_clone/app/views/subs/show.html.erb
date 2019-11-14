@@ -1,0 +1,14 @@
+<% if current_user == @sub.moderator %>
+  <a href="<%= edit_sub_url(@sub) %>">Edit Sub</a>
+<% end %>
+
+<h1><%= @sub.title %><h1>
+<h4>Description</h4><p><%= @sub.description %><p>
+
+<ul>
+  <% @sub.posts.each do |post| %>
+    <li><a href="<%= post_url(post) %>"><%= post.title %></a></li>
+  <% end %>
+</ul>
+
+<a href="<%= new_post_url %>">Make a New Post</a>

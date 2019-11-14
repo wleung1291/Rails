@@ -1,0 +1,7 @@
+<h1>Cat rental request's index page</h1>
+
+<ul>
+  <% @cat_rental_request.each do |request| %>
+    <li> <%= request.cat_id %>
+  <% end %>
+</ul>

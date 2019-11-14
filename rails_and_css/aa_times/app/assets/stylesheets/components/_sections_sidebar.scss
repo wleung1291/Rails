@@ -1,0 +1,56 @@
+
+// sections 
+.sections-sidebar.expand {
+	display: flex;
+	opacity: 1;
+	width: 150px;
+	transition: width 0.2s ease, opacity 0.5s ease;
+  overflow: visible;
+  padding-left: 10px;
+}
+
+.sections-sidebar {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	font-size: 12px;
+	background: white;
+	font-weight: bolder;
+	text-transform: initial;
+	width: 0px;
+	z-index: 1;
+  box-shadow: -1px 4px 6px 1px rgba(0, 0, 0, 0.09);
+	overflow: hidden;
+}
+
+// submenu header
+.sections-sidebar ul li.subheader {
+  display: flex;
+  justify-content: center;
+	text-transform: uppercase;
+	color: $gray;
+	margin: 0px 0px 5px 0;
+}
+
+// submenu dropdown
+.dropdown {
+	position: relative;
+}
+
+.dropdown ul {
+	display: none;
+	position: absolute;
+  left: 80px;
+  background: white;
+  border: 1px solid $light-gray;
+  z-index: 1;
+  box-shadow: -1px 4px 6px rgba(0,0,0,0.09);
+  top: 0px;
+  padding: 0 10px 0 10px;
+}
+.dropdown:hover ul  {
+	display: block;
+}
+

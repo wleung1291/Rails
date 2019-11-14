@@ -1,0 +1,25 @@
+<h1 class='page-header'>Edit sub</h1>
+<%= render 'shared/errors' %>
+
+<%= render "form", sub: @sub, action: :edit %>
+
+<% 
+=begin %>
+<div class="edit-sub-main">
+  <form action="<%= subs_url %>" method="post">
+    <input type="hidden" name="_method" method="patch">
+    <%= auth_token %>
+
+    <div class="sub-input"> 
+      <label for="sub-name">Name</label>
+      <input id="sub-name" type="text" name="sub[name]" value="<%= @sub.title %>">
+
+      <label for="sub-description">Description</label>
+      <textarea name="sub[description]"><%= @sub.description %></textarea>
+
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+<% 
+=end %>

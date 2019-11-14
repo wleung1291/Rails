@@ -1,0 +1,20 @@
+<h1 class="page-header">
+  <a href="<%= bands_url %>">Bands</a>&nbsp> New Band
+</h1>
+<%= render 'shared/errors' %>
+
+<%= render "form", band: @band, action: :new %>
+
+<% 
+=begin %>
+<form action="<%= bands_url %>" method="post">
+  <%= auth_token%>
+
+  <label for="band-name">Name</label>
+  <input id="band-name" type="text" name="band[name]" value="<%= @band.name %>">
+  <br>
+
+  <input type="submit" value="submit">
+</form>
+<% 
+=end %>

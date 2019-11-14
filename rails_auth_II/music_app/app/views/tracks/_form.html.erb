@@ -1,0 +1,54 @@
+<% if action == :edit %>
+  <% action_url = track_url(track) %>
+<% else %>
+  <% action_url = tracks_url %>
+<% end %>
+
+<form class="track-form" action="<%= action_url %>" method="post">
+  <div class="track-form-items">
+    <% if action == :edit %>
+      <input type="hidden" name="_method" value="patch">
+    <% end %>
+    <%= auth_token %>
+
+  <p>
+    <label for="track-title">Title</label>
+    <input id="track-title" type="text" name="track[title]" value="<%= track.title %>">
+  </p>
+
+  <p>
+    <label for="track-album">Album</label>
+    <select id="track-album" name="track[album_id]">
+      <% Album.all.each do |album| %>
+        <option <%= "selected" if track.album_id == album.id %> value="<%= album.id   %>">
+          <%= album.title %>
+        </option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="track-ord">Order</label>
+    <input id="track-ord" type="number" name="track[ord]" value="<%= track.ord %>">
+  </p>
+
+  <p>
+    <label for="track-bonus-f">Standard</label>
+    <input id="track-bonus-f" type="radio" name="track[bonus]" value="f" 
+      <%= "checked" if !track.bonus %>>
+
+    <label for="track-bonus-t">Bonus</label>
+    <input id="track-bonus-t" type="radio" name="track[bonus]" value="t" 
+      <%= "checked" if track.bonus %>>
+  </p>
+
+  <p>
+    <label for="track-lyrics">Lyrics</label>
+    <textarea id="track-lyrics" name="track[lyrics]" rows="20" cols="50">
+      <%= track.lyrics %>
+    </textarea>
+  </p>
+  </div>
+  
+  <p id="track-form-submit-btn"><input type="submit" value="Submit"></p>
+</form>

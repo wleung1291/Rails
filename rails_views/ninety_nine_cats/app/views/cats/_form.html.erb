@@ -1,0 +1,65 @@
+<%# Returns true if the record is persisted, i.e. it’s not a new record and it 
+was not destroyed, otherwise returns false. %>
+<%# action = (cat.persisted? ? cat_url(cat) : cats_url) %>
+<%# method = (cat.persisted? ? :patch : :post) %>
+
+<% if action == :edit %>
+  <% action_url = cat_url(cat)  %>
+<% else %>
+  <% action_url = cats_url %>
+<% end %>
+
+<%# rake routes, you can see the prefix for POST is cat, thus cat_url %>
+<%# cat_url(@cat); @cat gets access to the cat id from the cats controller in 
+  the edit action from the @cat instance variable %>
+<form action="<%= action_url %>" method="post">
+  <% if action == :edit %>
+    <%# Browsers can only do get and post so we emulate a patch request method %>
+    <input type="hidden" name="_method" value= "PATCH" >
+  <% end %>
+  
+  <label for="name">Name</label>
+  <input id="name" type="text" name="cat[name]" value="<%= cat.name %>">
+  <%# value= cat.name  prefills data for edit %>
+  <br>
+
+  <label for="birth_date">Birth Date</label>
+  <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date %>">
+  <br>  
+
+  <label for="color">Color</label>
+  <select id="color" name="cat[color]">
+    <option disabled selected>-- Select a color --</option>
+      <% Cat::COLORS.each do |color| %>
+        <option value="<%= color %>" 
+          <%= cat.color == color ? "selected" : "" %>>
+          <%# if @cat.color==color return the word selected else return null.
+            Used to prefill value for editing %>
+          <%= color.upcase %>
+        </option>
+      <% end %>
+  </select>
+  <br>
+
+  <label for="male">Male</label>
+  <input id="male" type="radio" name="cat[sex]" value = "M"
+    <%= cat.sex == "M" ? "checked" : "" %>>
+    <%# line above is used to prefill values for editing %>
+
+  <label for="female">Female</label>
+  <input id="female" type="radio" name="cat[sex]" value = "F"
+    <%= cat.sex == "F" ? "checked" : "" %>>
+    <%# line above is used to prefill values for editing %>
+  <br>
+
+  <label for="description">Description
+    <textarea name="cat[description]">
+      <%= cat.description %>
+    </textarea>
+  </label>
+  <br>
+
+  <%# submit_text = (cat.persisted? ? 'Update Cat' : 'Add Cat') %>
+  <input type="submit" value="<%= action == :edit ? 'Edit cat' : 'Add cat'%>">
+
+</form>
